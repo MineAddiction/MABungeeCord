@@ -1,20 +1,6 @@
 package net.md_5.bungee.conf;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.InetSocketAddress;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.logging.Level;
 import lombok.RequiredArgsConstructor;
 import net.md_5.bungee.Util;
 import net.md_5.bungee.api.ChatColor;
@@ -25,6 +11,11 @@ import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.util.CaseInsensitiveMap;
 import org.yaml.snakeyaml.DumperOptions;
 import org.yaml.snakeyaml.Yaml;
+
+import java.io.*;
+import java.net.InetSocketAddress;
+import java.util.*;
+import java.util.logging.Level;
 
 public class YamlConfig implements ConfigurationAdapter
 {
@@ -89,7 +80,7 @@ public class YamlConfig implements ConfigurationAdapter
         Map<String, Object> groups = get( "groups", new HashMap<String, Object>() );
         if ( groups.isEmpty() )
         {
-            groups.put( "md_5", Collections.singletonList( "admin" ) );
+            groups.put( "Grampa_Bacon", Collections.singletonList( "admin" ) );
         }
     }
 
